@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 19:50:25 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/07/08 20:57:47 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/07/10 20:16:38 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ int main( void )
 		std::cout << std::endl;
 		Ice	*mat = new Ice();
 		src->learnMateria(mat);
-		// delete	mat;
 
 		// std::cout << std::endl;
 		src->printMaterias();
+		
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
@@ -96,7 +96,7 @@ int main( void )
 		berta->printMaterias();
 
 		std::cout << std::endl;
-		tmp = src->createMateria("ice"); //esto lo pongo yo
+		tmp = src->createMateria("ice");
 		alberto->equip(tmp);
 		alberto->printMaterias();
 	std::cout << std::endl;
@@ -177,6 +177,8 @@ int main( void )
 		kirby->printMaterias();
 		kirby->printFloor();
 
+		delete ice;
+		delete cure;
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
@@ -188,7 +190,7 @@ int main( void )
 		tmp = src->createMateria("ice");
 		test->equip(tmp);
 		test->unequip(0);
-
+		
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
@@ -200,6 +202,7 @@ int main( void )
 	delete alberto;
 	delete berta;
 	delete src;
+	delete tmp;
 
 	return (0);
 }

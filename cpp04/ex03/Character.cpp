@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 16:24:20 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/07/08 21:04:17 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/07/10 20:15:02 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void Character::equip(AMateria* m)
 		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m->clone();
-			delete m;
+			// delete m;
 			std::cout << "Materia equiped on slot " << i << " with type: " << this->_inventory[i]->getType() << std::endl;
 			return ;
 		}
