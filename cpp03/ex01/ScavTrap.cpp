@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:34:22 by codespace         #+#    #+#             */
-/*   Updated: 2024/05/30 14:50:29 by codespace        ###   ########.fr       */
+/*   Updated: 2024/09/06 18:58:11 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,10 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << _name << " is now in Gate keeper mode." << std::endl;
+	std::cout << "ScavTrap " << _name << " is now guarding the gate." << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
-
-/*
-Name, which is passed as parameter to a constructor
-• Hit points (100), represent the health of the ClapTrap
-• Energy points (50)
-• Attack damage (20)
-ScavTrap will also have its own special capacity:
-void guardGate();
-*/

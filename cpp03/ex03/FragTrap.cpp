@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:34:22 by codespace         #+#    #+#             */
-/*   Updated: 2024/05/30 14:58:42 by codespace        ###   ########.fr       */
+/*   Updated: 2024/09/06 20:24:17 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,6 @@ FragTrap& FragTrap::operator=(const FragTrap &other)
 	return (*this);
 }
 
-void FragTrap::attack(const std::string& target)
-{
-	if (_energyPoints < 1)
-		std::cout << "FragTrap " <<  _name << " can't attack, because they have no energy left." << std::endl;
-	else if (_hitPoints < 1)
-		std::cout << _name << " can't attack, because they have no hit points left." << std::endl;
-	else
-	{
-		std::cout << "FragTrap " << _name << " attacks " << target << " causing " << _attackDmg << " damage." << std::endl;
-		_energyPoints--;
-		std::cout << "FragTrap " <<  _name << " has " << _energyPoints << " energy points left." << std::endl;
-	}
-}
-
 void FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap " << _name << " wants to request a positive highfive." << std::endl;
@@ -75,11 +61,3 @@ FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl;
 }
-
-/*
-Name, which is passed as parameter to a constructor
-• Hit points (100), represent the health of the ClapTrap
-• Energy points (100)
-• Attack damage (30)
-
-*/
