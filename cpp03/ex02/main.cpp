@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 18:24:50 by codespace         #+#    #+#             */
-/*   Updated: 2024/05/29 20:23:19 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/09/12 17:06:35 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 int main(void)
 {
+	ClapTrap wario;
 	FragTrap mario("Mario");
 	ScavTrap luigi("No name");
 
+	wario.setName("Wario");
 	luigi.setName("Luigi");
 	mario.setAttackDmg(5);
 	mario.attack(luigi.getName());

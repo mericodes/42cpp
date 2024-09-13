@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 18:24:50 by codespace         #+#    #+#             */
-/*   Updated: 2024/05/29 20:23:19 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/09/12 18:44:01 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int main(void)
 
 	luigi.guardGate();
 	wario.highFivesGuys();
+	waluigi.whoAmI();
+	waluigi.setName("Waluigi");
 	waluigi.whoAmI();
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:34:22 by codespace         #+#    #+#             */
-/*   Updated: 2024/06/05 21:10:08 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/09/12 17:05:33 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,3 @@ ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
-
-/*
-Name, which is passed as parameter to a constructor
-• Hit points (100), represent the health of the ClapTrap
-• Energy points (50)
-• Attack damage (20)
-ScavTrap will also have its own special capacity:
-void guardGate();
-*/

@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:34:16 by codespace         #+#    #+#             */
-/*   Updated: 2024/05/30 14:49:24 by codespace        ###   ########.fr       */
+/*   Updated: 2024/09/12 17:06:52 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
-#define SCAVTRAP
+#define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
-	private: 
-
 	public:
 		ScavTrap();
 		ScavTrap(std::string name);

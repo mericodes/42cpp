@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:34:16 by codespace         #+#    #+#             */
-/*   Updated: 2024/05/30 14:58:12 by codespace        ###   ########.fr       */
+/*   Updated: 2024/09/12 17:05:42 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 class FragTrap : virtual public ClapTrap
 {
-	private: 
-
 	public:
 		FragTrap();
 		FragTrap(std::string name);
@@ -26,7 +24,6 @@ class FragTrap : virtual public ClapTrap
 		FragTrap(const FragTrap &copy);
 		FragTrap& operator=(const FragTrap &other);
 
-		void attack(const std::string& target);
 		void highFivesGuys(void);
 		
 		~FragTrap();
