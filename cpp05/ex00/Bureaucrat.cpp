@@ -7,9 +7,15 @@ Bureaucrat::Bureaucrat() : _name("Noname"), _grade(3)
 }
 
 /*	NAME CONSTRUCTOR	*/
-Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 {
 	std::cout << "Bureaucrat name constructor" << std::endl;
+	if (_grade < 1)
+		throw GradeTooHighException();
+	else if (_grade > 150)
+		throw GradeTooLowException();
+	else
+		_grade--;
 }
 
 /*	COPY CONSTRUCTOR	*/
@@ -43,7 +49,31 @@ const int &Bureaucrat::getGrade() const
 }
 
 /*	MEMBER FUNCTIONS	*/
-// const char *Bureaucrat::GradeTooHighException::what() const throw()
+void Bureaucrat::incrementGrade()
+{
+	if (_grade <= 1)
+		throw GradeTooHighException();
+	else
+		_grade--;
+}
+void Bureaucrat::decrementGrade()
+{
+	if (_grade >= 150)
+		throw GradeTooLowException();
+	else
+		_grade++;
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("The grade is too high. Range goes from 150 to 1");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("The grade is too low. Range goes from 150 to 1");
+}
+
 /*	DESTRUCTOR	*/
 Bureaucrat::~Bureaucrat()
 {

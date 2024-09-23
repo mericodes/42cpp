@@ -11,17 +11,6 @@ class Bureaucrat
 		int _grade;
 
 	public:
-
-		class GradeTooHighException : public std::exception
-		{
-			
-		};
-
-		class GradeTooLowException : public std::exception
-		{
-			
-		};
-
 		/*	DEFAULT CONSTRUCTOR	*/
 		Bureaucrat();
 		/*	NAME CONSTRUCTOR	*/
@@ -36,6 +25,20 @@ class Bureaucrat
 		const int &getGrade() const;
 
 		/*	MEMBER FUNCTIONS	*/
+		void incrementGrade();
+		void decrementGrade();
+
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
 
 		/*	DESTRUCTOR	*/
 		~Bureaucrat();
