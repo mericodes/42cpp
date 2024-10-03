@@ -5,22 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 18:17:32 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/10/03 19:26:44 by mlopez-i         ###   ########.fr       */
+/*   Created: 2024/05/28 18:24:50 by codespace         #+#    #+#             */
+/*   Updated: 2024/07/03 19:48:27 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
-int main ()
+int main()
 {
-	try
-	{
-		Bureaucrat alberto("alberto", 0);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() <<'\n';
-	}
-	return (0);
+	//const Animal* nope = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	
+	j->makeSound();
+	i->makeSound();
+
+	delete j;
+	delete i;
+	return 0;
 }

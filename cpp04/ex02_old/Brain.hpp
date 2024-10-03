@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 21:10:31 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/09/19 14:29:58 by mlopez-i         ###   ########.fr       */
+/*   Created: 2024/07/03 17:52:24 by mlopez-i          #+#    #+#             */
+/*   Updated: 2024/07/03 18:42:10 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include <iostream>
+//# include <string>
 
-class Cat : public Animal
+class Brain
 {
-    	private:
-			Brain *_brain;
-		public:
+	private:
+		std::string _ideas[100];
+	public:
 		/*	DEFAULT CONSTRUCTOR	*/
-		Cat();
+		Brain();
+		Brain(std::string const &type);
 
 		/*	COPY CONSTRUCTOR	*/
-		Cat(const Cat &copy);
+		Brain(const Brain &copy);
 		
 		/*	COPY ASSIGNMENT OPERATOR OVERLOAD	*/
-		Cat& operator=(const Cat &other);
+		Brain& operator=(const Brain &other);
 		
-		/*	MEMBER FUNCTIONS	*/
-        void makeSound() const;
-		Brain	*getBrain() const;
-		void	printBrainIdea(int index) const;
+		/*	GETTERS AND SETTERS	*/
+		// const std::string &getIdeas(void) const;
 
 		/*	DESTRUCTOR	*/
-		~Cat();	
+		~Brain();
 };
 
 #endif

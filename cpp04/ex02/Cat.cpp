@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:10:23 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/07/03 19:48:07 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:26:55 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,19 @@ Cat& Cat::operator=(const Cat &other)
 void Cat::makeSound() const
 {
 	std::cout << "    *    MEOW MEOW    *    " << std::endl;
+}
+
+Brain	*Cat::getBrain() const
+{
+	return (_brain);
+}
+
+void	Cat::printBrainIdea(int index) const
+{
+	if (_brain)
+		_brain->printIdea(index);
+	else
+		std::cout << "This dog doesn't have a brain" << std::endl;
 }
 
 /*	DESTRUCTOR	*/

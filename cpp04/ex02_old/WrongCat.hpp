@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:10:31 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/09/19 14:29:58 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/07/03 17:46:55 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
-    	private:
-			Brain *_brain;
-		public:
+    	public:
 		/*	DEFAULT CONSTRUCTOR	*/
-		Cat();
+		WrongCat();
+		WrongCat(std::string type);
 
 		/*	COPY CONSTRUCTOR	*/
-		Cat(const Cat &copy);
+		WrongCat(const WrongCat &copy);
 		
 		/*	COPY ASSIGNMENT OPERATOR OVERLOAD	*/
-		Cat& operator=(const Cat &other);
+		WrongCat& operator=(const WrongCat &other);
 		
 		/*	MEMBER FUNCTIONS	*/
         void makeSound() const;
-		Brain	*getBrain() const;
-		void	printBrainIdea(int index) const;
-
 		/*	DESTRUCTOR	*/
-		~Cat();	
+		~WrongCat();	
 };
 
 #endif

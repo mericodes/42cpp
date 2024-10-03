@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 17:41:53 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/07/10 20:14:40 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:28:45 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,10 @@ void MateriaSource::learnMateria(AMateria* m)
 	{
 		if (_materias[i] == NULL)
 		{
-			_materias[i] = m->clone();
-			delete m;
+			_materias[i] = m;
 			return ;
 		}
 	}
-	delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)

@@ -15,7 +15,7 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 	else if (_grade > 150)
 		throw GradeTooLowException();
 	else
-		_grade--;
+		_grade = grade;
 }
 
 /*	COPY CONSTRUCTOR	*/
@@ -80,4 +80,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "Bureaucrat destructor" << std::endl;
 }
 
-// Bureaucrat::GradeTooHighException or a Bureaucrat::GradeTooLowException;
+std::ostream &operator<<(std::ostream& out, const Bureaucrat& bur)
+{
+	return (out << bur.getName() << ", bureaucrat grade " << bur.getGrade() << ".");
+}

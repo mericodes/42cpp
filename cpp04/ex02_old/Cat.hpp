@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:10:31 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/09/19 14:29:58 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/07/03 19:37:21 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Cat : public Animal
 		public:
 		/*	DEFAULT CONSTRUCTOR	*/
 		Cat();
+		Cat(std::string type);
 
 		/*	COPY CONSTRUCTOR	*/
 		Cat(const Cat &copy);
@@ -32,9 +33,6 @@ class Cat : public Animal
 		
 		/*	MEMBER FUNCTIONS	*/
         void makeSound() const;
-		Brain	*getBrain() const;
-		void	printBrainIdea(int index) const;
-
 		/*	DESTRUCTOR	*/
 		~Cat();	
 };

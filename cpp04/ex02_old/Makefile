@@ -6,13 +6,13 @@
 #    By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/16 17:06:16 by mlopez-i          #+#    #+#              #
-#    Updated: 2024/09/18 20:48:49 by mlopez-i         ###   ########.fr        #
+#    Updated: 2024/07/03 19:27:10 by mlopez-i         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex02
 
-SRC_FILES = Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
+SRC_FILES = Animal.cpp Brain.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJ_DIR = objs/
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
@@ -22,7 +22,7 @@ DEP_FILES = $(SRC_FILES:.cpp=.d)
 DEPS = $(addprefix $(OBJ_DIR), $(DEP_FILES))
 
 CC = c++
-CFLAGS = -std=c++98 -Wall -Wextra -Werror -MMD #-fsanitize=address
+CFLAGS = -std=c++98 -Wall -Wextra -Werror -MMD -g -fsanitize=address
 RM = rm -f
 INCLUDE = -I ./
 

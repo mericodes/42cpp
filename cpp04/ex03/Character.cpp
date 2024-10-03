@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 16:24:20 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/07/10 20:15:02 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:42:48 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Character::Character(std::string const & name) : _name(name)
 		_inventory[i] = NULL;
 	}
 	_trash = 1;
-	_floor = NULL;
+	// _floor = NULL;
 	this->_floor = new AMateria*[_trash];
 	this->_floor[0] = NULL;
 }
@@ -83,7 +83,7 @@ void Character::equip(AMateria* m)
 {
 	if (m == NULL)
 	{
-		std::cout << "Can't equip a NULL material..." << std::endl;
+		std::cout << "Can't equip a NULL materia..." << std::endl;
 		return ;
 	}
 	for (int i = 0; i < 4; i++)

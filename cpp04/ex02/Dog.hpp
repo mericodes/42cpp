@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:09:56 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/07/03 18:55:22 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:26:07 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Dog : public Animal
     public:
 		/*	DEFAULT CONSTRUCTOR	*/
 		Dog();
-		Dog(std::string type);
 
 		/*	COPY CONSTRUCTOR	*/
 		Dog(const Dog &copy);
@@ -33,6 +32,9 @@ class Dog : public Animal
 		
 		/*	MEMBER FUNCTIONS	*/
         void makeSound() const;
+		Brain	*getBrain() const;
+		void	printBrainIdea(int index) const;
+		
 		/*	DESTRUCTOR	*/
 		~Dog();	
 };

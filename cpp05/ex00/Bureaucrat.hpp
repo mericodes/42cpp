@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/03 18:17:40 by mlopez-i          #+#    #+#             */
+/*   Updated: 2024/10/03 18:29:45 by mlopez-i         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAFT_HPP
 # define BUREAUCRAFT_HPP
 
@@ -43,5 +55,7 @@ class Bureaucrat
 		/*	DESTRUCTOR	*/
 		~Bureaucrat();
 };
+
+std::ostream &operator<<(std::ostream& out, const Bureaucrat& bur);
 
 #endif

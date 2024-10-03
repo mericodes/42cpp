@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 19:50:25 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/07/10 20:16:38 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:22:55 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,6 @@
 #include "Ice.hpp"
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
-
-// int main()
-// {
-// 	IMateriaSource* src = new MateriaSource();
-// 	src->learnMateria(new Ice());
-// 	src->learnMateria(new Cure());
-// 	ICharacter* me = new Character("me");
-// 	AMateria* tmp;
-// 	tmp = src->createMateria("ice");
-// 	me->equip(tmp);
-// 	tmp = src->createMateria("cure");
-// 	me->equip(tmp);
-// 	ICharacter* bob = new Character("bob");
-// 	me->use(0, *bob);
-// 	me->use(1, *bob);
-// 	delete bob;
-// 	delete me;
-// 	delete src;
-// 	return 0;
-// }
-
 
 int main( void )
 {
@@ -58,127 +37,130 @@ int main( void )
 		std::cout << std::endl;
 		Ice	*mat = new Ice();
 		src->learnMateria(mat);
+		delete	mat;
 
-		// std::cout << std::endl;
+		std::cout << std::endl;
 		src->printMaterias();
-		
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
 
-	std::cout << "3. Creating Character \"Berta\" and \"Alberto\"" << std::endl;
-		Character* berta = new Character("Berta");
-		// berta->printMaterias();
+	std::cout << "3. Creating Character \"vilma\" and \"oktorok\"" << std::endl;
+		Character* vilma = new Character("vilma");
+		vilma->printMaterias();
 		std::cout << std::endl;
 
-		Character* alberto = new Character("Alberto");
-		// alberto->printMaterias();
+		Character* oktorok = new Character("oktorok");
+		oktorok->printMaterias();
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
 
-	std::cout << "4. \"berta\" trying to equip 5 materias and \"alberto\" one materia" << std::endl;
-		berta->equip(NULL);
+	std::cout << "4. \"vilma\" trying to equip 5 materias and \"oktorok\" one materia" << std::endl;
+		vilma->equip(NULL);
 		
 		AMateria* tmp;
 		tmp = src->createMateria("ice");
-		berta->equip(tmp);
-		tmp = src->createMateria("ice");
-		berta->equip(tmp);
-		tmp = src->createMateria("cure");
-		berta->equip(tmp);
-		tmp = src->createMateria("cure");
-		berta->equip(tmp);
-		tmp = src->createMateria("ice");
-		berta->equip(tmp);
-		
-		std::cout << std::endl;
-		berta->printMaterias();
+		vilma->equip(tmp);
+	delete tmp;
+		tmp = src->createMateria("Ice");
+		vilma->equip(tmp);
+	delete tmp;
+		tmp = src->createMateria("Cure");
+		vilma->equip(tmp);
+	delete tmp;
+		tmp = src->createMateria("Cure");
+		vilma->equip(tmp);
+	delete tmp;
+		tmp = src->createMateria("Ice");
+		vilma->equip(tmp);
+	delete tmp;
 
 		std::cout << std::endl;
-		tmp = src->createMateria("ice");
-		alberto->equip(tmp);
-		alberto->printMaterias();
+		vilma->printMaterias();
+
+		std::cout << std::endl;
+		tmp = src->createMateria("Ice"); //esto lo pongo yo
+		oktorok->equip(tmp);
+	delete tmp;
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
 
-	std::cout << "5. Testing Character Assignation overload \"berta = alberto\" for deep copy and changed berta afterwards" << std::endl;	
-		*alberto = *berta;
+	std::cout << "5. Testing Character Assignation overload \"vilma = oktorok\" for deep copy and changed vilma afterwards" << std::endl;	
+		*oktorok = *vilma;
 		
-		berta->unequip(0);
-		std::cout << "Berta's Materials" << std::endl;
-		berta->printMaterias();
+		vilma->unequip(0);
+		std::cout << "VILMA" << std::endl;
+		vilma->printMaterias();
 		std::cout << std::endl;
 
-		std::cout << "Alberto's Materials" << std::endl;
-		alberto->printMaterias();
-	std::cout << std::endl;
+		std::cout << "OKTOROK" << std::endl;
+		oktorok->printMaterias();
+	std::cout  << std::endl;
 
 // ------------------------------------------------------------------------------------ //
 
-	std::cout << "6. Testing character copy constructor for deep copy \"Nuria = Character(berta)\" and changed berta afterwards" << std::endl;
+	std::cout << "6. Testing character copy constructor for deep copy \"stardust = Character(vilma)\" and changed vilma afterwards" << std::endl;
 		
-		std::cout << "Berta's Materials" << std::endl;
-		berta->printMaterias();
-		Character* nuria = new Character(*berta);
-		std::cout << "Nuria's Materials" << std::endl;
-		nuria->printMaterias();
+		vilma->printMaterias();
+		Character* stardust = new Character(*vilma);
+		stardust->printMaterias();
 
-		tmp = src->createMateria("ice");
-		berta->equip(tmp);
-		std::cout << "Berta's Materials" << std::endl;
-		berta->printMaterias();
+		tmp = src->createMateria("Ice");
+		vilma->equip(tmp);
+	delete tmp;
+		std::cout << "VILMA" << std::endl;
+		vilma->printMaterias();
 		std::cout << std::endl;
 
-		std::cout << "Nuria's Materials" << std::endl;
-		nuria->printMaterias();
+		std::cout << "STARDUST" << std::endl;
+		stardust->printMaterias();
 
 
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
 	
-	std::cout << "7. \"Berta\" using all equiped materias on \"Alberto\" " << std::endl;
-		berta->use(0, *alberto);
-		berta->use(1, *alberto);
-		berta->use(2, *alberto);
-		berta->use(3, *alberto);
-		berta->use(10, *alberto);
-		berta->use(-1, *alberto);
+	std::cout << "7. \"vilma\" using all equiped materias on \"oktorok\" " << std::endl;
+		vilma->use(0, *oktorok);
+		vilma->use(1, *oktorok);
+		vilma->use(2, *oktorok);
+		vilma->use(3, *oktorok);
+		vilma->use(10, *oktorok);
+		vilma->use(-1, *oktorok);
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
 
-	std::cout << "8. \"Berta\" trying to use unequiped materias on \"Alberto\" " << std::endl;
-		berta->unequip(0);
-		berta->use(0, *alberto);
+	std::cout << "8. \"vilma\" trying to use unequiped materias on \"oktorok\" " << std::endl;
+		vilma->unequip(0);
+		vilma->use(0, *oktorok);
 
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
 
-	std::cout << "9. New character \"kirby\" equipping and unequipping materias" << std::endl;
-		ICharacter* kirby = new Character("kirby");
+	std::cout << "9. New character \"lucifer\" equipping and unequipping materias" << std::endl;
+		ICharacter* lucifer = new Character("lucifer");
 		AMateria *cure = new Cure;
 		AMateria *ice = new Ice;
 
-		kirby->equip(cure);
-		kirby->equip(ice);
-		kirby->equip(cure);
-		kirby->equip(ice);
-		kirby->unequip(0);
-		kirby->unequip(1);
-		kirby->unequip(2);
-		kirby->unequip(3);
-		kirby->equip(cure);
-		kirby->equip(ice);
+		lucifer->equip(cure);
+		lucifer->equip(ice);
+		lucifer->equip(cure);
+		lucifer->equip(ice);
+		lucifer->unequip(0);
+		lucifer->unequip(1);
+		lucifer->unequip(2);
+		lucifer->unequip(3);
+		lucifer->equip(cure);
+		lucifer->equip(ice);
 
-		kirby->printMaterias();
-		kirby->printFloor();
+		lucifer->printMaterias();
 
-		delete ice;
 		delete cure;
+		delete ice;
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
@@ -189,20 +171,20 @@ int main( void )
 		
 		tmp = src->createMateria("ice");
 		test->equip(tmp);
+	delete tmp;
 		test->unequip(0);
-		
+
 	std::cout << std::endl;
 
 // ------------------------------------------------------------------------------------ //
-	std::cout << "11. Deleting \"Berta\", \"Alberto\", \"Nuria\" and \"Kirby\"" << std::endl;
+	std::cout << "11. Deleting \"vilma\", \"oktorok\", \"stardust\" and \"lucifer\"" << std::endl;
 	
 	delete test;
-	delete kirby;
-	delete nuria;
-	delete alberto;
-	delete berta;
+	delete lucifer;
+	delete stardust;
+	delete oktorok;
+	delete vilma;
 	delete src;
-	delete tmp;
 
 	return (0);
 }

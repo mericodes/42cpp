@@ -1,64 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 21:09:43 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/09/19 14:25:56 by mlopez-i         ###   ########.fr       */
+/*   Created: 2024/06/05 21:10:23 by mlopez-i          #+#    #+#             */
+/*   Updated: 2024/07/03 19:48:07 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Cat.hpp"
 
 /*	DEFAULT CONSTRUCTOR	*/
-Dog::Dog() : Animal("Dog")
+Cat::Cat() : Animal("Cat")
 {
-	std::cout << "Dog constructor called" << std::endl;
+	std::cout << "Cat constructor called" << std::endl;
 	_brain = new Brain();
 }
 
 /*	COPY CONSTRUCTOR	*/
-Dog::Dog(const Dog &copy)
+Cat::Cat(const Cat &copy)
 {
-    std::cout << "Dog copy constructor called" << std::endl;
+    std::cout << "Cat copy constructor called" << std::endl;
     *this = copy;
 }
 		
 /*	COPY ASSIGNMENT OPERATOR OVERLOAD	*/
-Dog& Dog::operator=(const Dog &other)
+Cat& Cat::operator=(const Cat &other)
 {
-    std::cout << "Dog copy assignment operator called" << std::endl;
+    std::cout << "Cat copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		_type = other.getType();
 	}
 	return (*this);
 }
-
+		
 /*	MEMBER FUNCTIONS	*/
-void Dog::makeSound() const
+void Cat::makeSound() const
 {
-	std::cout << "    *    WOOF WOOF    *    " << std::endl;
-}
-
-Brain	*Dog::getBrain() const
-{
-	return (_brain);
-}
-
-void	Dog::printBrainIdea(int index) const
-{
-	if (_brain)
-		_brain->printIdea(index);
-	else
-		std::cout << "This dog doesn't have a brain" << std::endl;
+	std::cout << "    *    MEOW MEOW    *    " << std::endl;
 }
 
 /*	DESTRUCTOR	*/
-Dog::~Dog()
+Cat::~Cat()
 {
 	delete _brain;
-	std::cout << "Dog Destructor called" << std::endl;
+	std::cout << "Cat Destructor called" << std::endl;
 }

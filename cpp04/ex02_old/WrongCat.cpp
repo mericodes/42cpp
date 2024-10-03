@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:10:23 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/09/19 14:26:55 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/07/03 17:47:14 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 /*	DEFAULT CONSTRUCTOR	*/
-Cat::Cat() : Animal("Cat")
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-	std::cout << "Cat constructor called" << std::endl;
-	_brain = new Brain();
+	std::cout << "WrongCat constructor called" << std::endl;
 }
 
 /*	COPY CONSTRUCTOR	*/
-Cat::Cat(const Cat &copy)
+WrongCat::WrongCat(const WrongCat &copy)
 {
-    std::cout << "Cat copy constructor called" << std::endl;
+    std::cout << "WrongCat copy constructor called" << std::endl;
     *this = copy;
 }
 		
 /*	COPY ASSIGNMENT OPERATOR OVERLOAD	*/
-Cat& Cat::operator=(const Cat &other)
+WrongCat& WrongCat::operator=(const WrongCat &other)
 {
-    std::cout << "Cat copy assignment operator called" << std::endl;
+    std::cout << "WrongCat copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		_type = other.getType();
@@ -38,27 +37,13 @@ Cat& Cat::operator=(const Cat &other)
 }
 		
 /*	MEMBER FUNCTIONS	*/
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
-	std::cout << "    *    MEOW MEOW    *    " << std::endl;
-}
-
-Brain	*Cat::getBrain() const
-{
-	return (_brain);
-}
-
-void	Cat::printBrainIdea(int index) const
-{
-	if (_brain)
-		_brain->printIdea(index);
-	else
-		std::cout << "This dog doesn't have a brain" << std::endl;
+	std::cout << "    *    WRONG MEOW    *    " << std::endl;
 }
 
 /*	DESTRUCTOR	*/
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	delete _brain;
-	std::cout << "Cat Destructor called" << std::endl;
+	std::cout << "WrongCat Destructor called" << std::endl;
 }

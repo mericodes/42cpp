@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/05 21:10:31 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/09/19 14:29:58 by mlopez-i         ###   ########.fr       */
+/*   Created: 2024/05/28 18:25:06 by codespace         #+#    #+#             */
+/*   Updated: 2024/05/29 20:08:53 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include <iostream>
+# include <string>
 
-class Cat : public Animal
+class WrongAnimal
 {
-    	private:
-			Brain *_brain;
-		public:
+	protected:
+		std::string	_type;
+
+	public:
 		/*	DEFAULT CONSTRUCTOR	*/
-		Cat();
+		WrongAnimal();
+		WrongAnimal(std::string const &type);
 
 		/*	COPY CONSTRUCTOR	*/
-		Cat(const Cat &copy);
+		WrongAnimal(const WrongAnimal &copy);
 		
 		/*	COPY ASSIGNMENT OPERATOR OVERLOAD	*/
-		Cat& operator=(const Cat &other);
+		WrongAnimal& operator=(const WrongAnimal &other);
 		
+		/*	GETTERS AND SETTERS	*/
+		const std::string &getType(void) const;
+
 		/*	MEMBER FUNCTIONS	*/
-        void makeSound() const;
-		Brain	*getBrain() const;
-		void	printBrainIdea(int index) const;
+		void makeSound() const;
 
 		/*	DESTRUCTOR	*/
-		~Cat();	
+		~WrongAnimal();	
 };
 
 #endif

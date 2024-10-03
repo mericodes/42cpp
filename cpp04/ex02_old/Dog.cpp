@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 21:09:43 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/09/19 14:25:56 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/07/03 18:58:21 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,12 @@ Dog& Dog::operator=(const Dog &other)
 	}
 	return (*this);
 }
-
+		
 /*	MEMBER FUNCTIONS	*/
 void Dog::makeSound() const
 {
 	std::cout << "    *    WOOF WOOF    *    " << std::endl;
 }
-
-Brain	*Dog::getBrain() const
-{
-	return (_brain);
-}
-
-void	Dog::printBrainIdea(int index) const
-{
-	if (_brain)
-		_brain->printIdea(index);
-	else
-		std::cout << "This dog doesn't have a brain" << std::endl;
-}
-
 /*	DESTRUCTOR	*/
 Dog::~Dog()
 {

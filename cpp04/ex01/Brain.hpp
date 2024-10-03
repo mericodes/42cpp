@@ -6,7 +6,7 @@
 /*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 17:52:24 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/07/03 18:42:10 by mlopez-i         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:18:58 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Brain
 	public:
 		/*	DEFAULT CONSTRUCTOR	*/
 		Brain();
-		Brain(std::string const &type);
 
 		/*	COPY CONSTRUCTOR	*/
 		Brain(const Brain &copy);
@@ -32,7 +31,8 @@ class Brain
 		Brain& operator=(const Brain &other);
 		
 		/*	GETTERS AND SETTERS	*/
-		// const std::string &getIdeas(void) const;
+		void	setIdeas(std::string const idea, int index);
+		void	printIdea(int index) const;
 
 		/*	DESTRUCTOR	*/
 		~Brain();
