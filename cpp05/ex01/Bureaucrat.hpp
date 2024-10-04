@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:17:40 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/10/04 15:18:58 by codespace        ###   ########.fr       */
+/*   Updated: 2024/10/04 16:20:50 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <string>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -51,6 +54,9 @@ class Bureaucrat
 			public:
 				const char *what() const throw();
 		};
+		
+		/*	METHODS	*/
+		void signForm(Form &form);
 
 		/*	DESTRUCTOR	*/
 		~Bureaucrat();
