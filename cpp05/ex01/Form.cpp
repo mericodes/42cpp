@@ -17,6 +17,15 @@ Form::Form(std::string const &name, int signGrade, int execGrade) :
 	
 }
 
+Form	&Form::operator=(const Form &other) 
+{
+//	std::cout << "AForm Copy assignment operator called" << std::endl;
+	if (this == &other)
+		return (*this);
+	_signed = other.getSigned();
+	return (*this);
+}
+
 std::string const Form::getName() const
 {
 	return (_name);

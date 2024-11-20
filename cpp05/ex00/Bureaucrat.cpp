@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:17:40 by mlopez-i          #+#    #+#             */
-/*   Updated: 2024/10/04 15:22:15 by codespace        ###   ########.fr       */
+/*   Updated: 2024/11/20 19:43:42 by mlopez-i         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 /*	DEFAULT CONSTRUCTOR	*/
 Bureaucrat::Bureaucrat() : _name("Noname"), _grade(3)
 {
-	std::cout << "Bureaucrat default constructor" << std::endl;
+	// std::cout << "Bureaucrat default constructor" << std::endl;
 }
 
 /*	NAME CONSTRUCTOR	*/
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 {
-	std::cout << "Bureaucrat name constructor" << std::endl;
+	std::cout << "Bureaucrat name constructor called. Name is: " << name;
+	std::cout << " and grade is: " << grade << std::endl;
 	if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)
@@ -33,14 +34,14 @@ Bureaucrat::Bureaucrat(std::string const &name, int grade) : _name(name)
 /*	COPY CONSTRUCTOR	*/
 Bureaucrat::Bureaucrat(const Bureaucrat &copy)
 {
-	std::cout << "Bureaucrat copy assignment operator" << std::endl;
+	// std::cout << "Bureaucrat copy assignment operator" << std::endl;
 	*this = copy;
 }
 
 /*	COPY ASSIGNMENT OPERATOR OVERLOAD	*/
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 {
-	std::cout << "Bureaucrat copy assignment operator called" << std::endl;
+	// std::cout << "Bureaucrat copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		// _name = other._name;
