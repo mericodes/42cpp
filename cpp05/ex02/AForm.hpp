@@ -3,6 +3,7 @@
 # define AFORM_HPP
 
 # include <iostream>
+# include <string>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -27,6 +28,7 @@ class AForm
 		int	getExecGrade() const;
 		bool	getSigned() const;
 		std::string returnSigned() const;
+		virtual std::string getTarget() const = 0;
 
 
 		class GradeTooHighException : public std::exception
@@ -44,9 +46,15 @@ class AForm
 			public:
 				const char *what() const throw();
 		};
+		class AFormNotSignedException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
 
+		virtual void beExecuted() const = 0;
 		void beSigned(const Bureaucrat &bur);
-
+		void execute(Bureaucrat const & executor) const;
 		
 };
 

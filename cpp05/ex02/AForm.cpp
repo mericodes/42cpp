@@ -73,6 +73,11 @@ const char *AForm::AFormSignedException::what() const throw()
 	return ("the AForm is already signed.");
 }
 
+const char *AForm::AFormNotSignedException::what() const throw()
+{
+	return ("the AForm is not signed.");
+}
+
 void AForm::beSigned(const Bureaucrat &bur)
 {
 	if (bur.getGrade() > _signGrade)
@@ -83,6 +88,15 @@ void AForm::beSigned(const Bureaucrat &bur)
 		_signed = true;
 }
 
+void AForm::execute(Bureaucrat const &executor) const
+{
+	if (!_signed)
+		throw AFormNotSignedException();
+	else if (_execGrade < executor.getGrade())
+		throw GradeTooLowException();
+	else
+		this->beExecuted();
+}
 
 std::ostream &operator<<(std::ostream &out, const AForm &AForm)
 {

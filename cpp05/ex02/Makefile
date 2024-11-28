@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+         #
+#    By: codespace <codespace@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/16 17:06:16 by mlopez-i          #+#    #+#              #
-#    Updated: 2024/11/20 20:02:40 by mlopez-i         ###   ########.fr        #
+#    Updated: 2024/11/28 18:02:36 by codespace        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex02
 
-SRC_FILES = AForm.cpp Bureaucrat.cpp main.cpp
+SRC_FILES = AForm.cpp Bureaucrat.cpp main.cpp ShrubberyCreationForm.cpp
 
 OBJ_DIR = objs/
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
