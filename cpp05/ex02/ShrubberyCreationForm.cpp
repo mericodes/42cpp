@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 17:29:19 by codespace         #+#    #+#             */
-/*   Updated: 2024/11/28 18:10:39 by codespace        ###   ########.fr       */
+/*   Updated: 2024/11/28 18:12:31 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,11 @@ void	ShrubberyCreationForm::beExecuted() const
 	// 				<< std::endl;
 	// 	outfile.close();
 	// }
-std::ofstream ofs ("test.txt", std::ofstream::out);
+	std::ofstream ofs ("test.txt", std::ofstream::out);
 
-  ofs << "lorem ipsum";
+	ofs << "lorem ipsum";
 
-  ofs.close();
-
+	ofs.close();
 }
 
 
