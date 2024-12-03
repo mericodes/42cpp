@@ -6,11 +6,11 @@
 #    By: mlopez-i <mlopez-i@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/16 17:06:16 by mlopez-i          #+#    #+#              #
-#    Updated: 2024/12/03 19:09:23 by mlopez-i         ###   ########.fr        #
+#    Updated: 2024/12/03 19:09:48 by mlopez-i         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex03
 
 SRC_FILES = AForm.cpp Bureaucrat.cpp main.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
