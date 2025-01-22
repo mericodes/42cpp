@@ -6,13 +6,87 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 08:41:43 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/22 08:41:56 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/22 10:53:37 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
+#include <ctime>
+#include <cstdlib>
 
-int main (void)
+#define MAX_VAL 5
+
+int main(int, char**)
 {
-	
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+
+	std::cout << "\n-----------------------------\n" << "Initializing Numbers and Mirror" << std::endl;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+      	std::cout << "Numbers #" << i << " is " << numbers[i] << std::endl;
+		std::cout << "Mirror #" << i << " is " << mirror[i] << std::endl;
+	    const int value = rand();
+        numbers[i] = value;
+		std::cout << "Numbers #" << i << " is " << numbers[i] << std::endl;
+        mirror[i] = value;
+		std::cout << "Mirror #" << i << " is " << mirror[i] << std::endl << std::endl;
+    }
+
+	std::cout << "\n-----------------------------\n" << "Coping Numbers into Tmp and Test" << std::endl;
+    //SCOPE
+    {
+        try
+		{
+			Array<int> tmp = numbers;
+			std::cout << "Size of temp is " << tmp.size() << std::endl;
+			std::cout << "Temp #" << MAX_VAL << " is " << tmp[MAX_VAL - 1] << std::endl;
+			Array<int> test(tmp);
+			tmp[MAX_VAL - 1] = 42;
+			std::cout << "Now temp #" << MAX_VAL << " is " << tmp[MAX_VAL - 1] << std::endl;
+			std::cout << "But test #" << MAX_VAL << " is " << test[MAX_VAL - 1] << std::endl;
+		}
+		catch (const std::exception& e)
+		{
+			 std::cerr << e.what() << '\n';
+		}
+    }
+
+	std::cout << "\n-----------------------------\n" << "Checking if the values in Numbers and Mirror are the same" << std::endl;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+	    if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+	std::cout << "ALL GOOD" << std::endl;
+
+	std::cout << "\n-----------------------------\n" << "Trying index out of range" << std::endl;
+    try
+    {
+		std::cout << "Index < 0:  " << std::endl;
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << "\n\n";
+    }
+    try
+    {
+        std::cout << "Too big index:  " << std::endl;
+		numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << "\n\n";
+    }
+
+	Array<int>	zero(0);
+	numbers = zero;
+
+    delete [] mirror;
+    return 0;
 }
