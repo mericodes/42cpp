@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 08:53:42 by codespace         #+#    #+#             */
-/*   Updated: 2025/01/22 10:38:19 by codespace        ###   ########.fr       */
+/*   Updated: 2025/01/23 07:41:34 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ template <typename T>
 Array<T>::~Array()
 {
 	// std::cout << "Array Default destructor called" << std::endl;
-	if (_arr && _n)
+	if (_arr && _size)
 		delete [] _arr;
 }
 
 template <typename T>
-Array<T>::Array(const Array<T> &other): _arr(NULL), _n(0)
+Array<T>::Array(const Array<T> &other): _arr(NULL), _size(0)
 {
 	// std::cout << "Array Copy Constructor called" << std::endl;
 	*this = other;
@@ -47,13 +47,13 @@ Array<T>	&Array<T>::operator=(const Array<T> &other)
 	// std::cout << "Array Copy Assignment Operator called" << std::endl;
 	if (this == &other)
 		return (*this);
-	if (_arr && _n)
+	if (_arr && _size)
 		delete [] _arr;
 	_arr = NULL;
-	_n = other._n;
-	if (_n)
-		_arr = new T[_n];
-	for (unsigned int i = 0; i < _n; i++)
+	_size = other._size;
+	if (_size)
+		_arr = new T[_size];
+	for (unsigned int i = 0; i < _size; i++)
 		_arr[i] = other._arr[i];
 	return (*this);
 }
